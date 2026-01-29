@@ -1,0 +1,236 @@
+.phone-frame {
+  max-width: 430px;
+  min-width: 320px;
+  height: 100vh;
+  margin: 32px auto;
+  background: #222;
+  border-radius: 40px;
+  box-shadow: 0 8px 40px 0 rgba(0,0,0,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 24px;
+  background: #111;
+  border-radius: 16px 16px 12px 12px;
+  z-index: 10;
+  box-shadow: 0 2px 6px 0 rgba(0,0,0,0.18);
+}
+
+.mobile-container {
+  max-width: 430px;
+  height: 100%;
+  margin: 0 auto;
+  border-radius: 32px;
+  box-shadow: 0 4px 32px 0 rgba(0,0,0,0.12), 0 1.5px 4px 0 rgba(0,0,0,0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.bottom-fixed-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.mobile-container.dark-theme {
+  background: #111;
+}
+
+body {
+  background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Admin Panel specific styles */
+.admin-panel-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.admin-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.admin-panel-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-panel-content::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 3px;
+}
+
+.admin-panel-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Remove bottom margins from admin panel tabs */
+.admin-panel-content > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from admin panel cards */
+.admin-panel-content .grid:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content .grid:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from admin panel tabs */
+.admin-panel-content [class*="activeTab"]:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content [class*="activeTab"]:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content *:last-child {
+  margin-bottom: 0;
+}
+
+.admin-panel-content > *:last-child {
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from admin panel tabs */
+.admin-panel-content > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove bottom margins from all admin panel elements */
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.admin-panel-content > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child > div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
