@@ -1,0 +1,42 @@
+server:
+  port: ${PORT:-8080}
+
+spring:
+  application:
+    name: tomlun-cinema-kotlin
+  
+  datasource:
+    url: "jdbc:postgresql://${PGHOST:localhost}:${PGPORT:5432}/${PGDATABASE:tomlun}"
+    username: ${PGUSER:postgres}
+    password: ${PGPASSWORD:}
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: false
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 10MB
+      file-size-threshold: 2KB
+
+  security:
+    user:
+      name: ${ADMIN_USERNAME:admin}
+      password: ${ADMIN_PASSWORD:admin123}
+
+logging:
+  level:
+    com.tomlun.cinema: INFO
+    org.springframework.security: INFO
+
+jwt:
+  secret: ${JWT_SECRET:your_jwt_secret_key_here_make_it_long_and_secure}
+  expiration: ${JWT_EXPIRATION:86400000}

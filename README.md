@@ -1,69 +1,112 @@
-# React + TypeScript + Vite
+# 🎬 Tomlun Cinema - Kotlin Backend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Этот проект представляет собой Kotlin backend для системы управления кинотеатром Tomlun, созданный как дополнение к существующему React frontend.
 
-Currently, two official plugins are available:
+## 🚀 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Kotlin** - основной язык программирования
+- **Spring Boot 3.2** - фреймворк для создания веб-приложений
+- **Spring Data JPA** - для работы с базой данных
+- **PostgreSQL** - база данных
+- **Gradle** - система сборки
 
-## Expanding the ESLint configuration
+## 📁 Структура проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+src/main/kotlin/com/tomlun/cinema/
+├── CinemaApplication.kt          # Главный класс приложения
+├── config/                       # Конфигурации
+│   └── SecurityConfig.kt        # Настройки безопасности
+├── controller/                   # REST контроллеры
+│   └── MovieController.kt       # API для фильмов
+├── model/                        # Модели данных
+│   ├── Movie.kt                 # Модель фильма
+│   └── User.kt                  # Модель пользователя
+├── repository/                   # Репозитории
+│   └── MovieRepository.kt       # Репозиторий фильмов
+└── service/                      # Бизнес-логика
+    └── MovieService.kt          # Сервис для фильмов
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🔧 Запуск проекта
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Предварительные требования
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Java 17+** установлен
+2. **PostgreSQL** запущен на порту 1024
+3. **База данных** `tomlun` создана
+
+### Запуск
+
+1. **Перейдите в папку проекта:**
+   ```bash
+   cd kotlin-backend
+   ```
+
+2. **Запустите приложение:**
+   ```bash
+   ./gradlew bootRun
+   ```
+
+3. **Приложение будет доступно по адресу:**
+   ```
+   http://localhost:8080
+   ```
+
+## 🌐 API Endpoints
+
+### Фильмы
+
+- `GET /api/kotlin/movies` - получить все фильмы
+- `GET /api/kotlin/movies/{id}` - получить фильм по ID
+- `GET /api/kotlin/movies/search?q={query}` - поиск фильмов
+- `GET /api/kotlin/movies/genre/{genre}` - фильмы по жанру
+- `GET /api/kotlin/movies/rating/{minRating}` - фильмы по рейтингу
+- `POST /api/kotlin/movies` - создать новый фильм
+- `PUT /api/kotlin/movies/{id}` - обновить фильм
+- `DELETE /api/kotlin/movies/{id}` - удалить фильм
+- `GET /api/kotlin/movies/count` - количество фильмов
+
+## 🔗 Интеграция с React
+
+Этот backend работает параллельно с существующим Node.js сервером. React приложение может использовать оба API:
+
+- **Node.js API** (порт 3001) - для существующего функционала
+- **Kotlin API** (порт 8080) - для новых возможностей
+
+### Пример использования в React:
+
+```typescript
+// Загрузка фильмов с Kotlin API
+const loadMoviesFromKotlin = async () => {
+  const response = await fetch('http://localhost:8080/api/kotlin/movies');
+  if (response.ok) {
+    const movies = await response.json();
+    setMovies(movies);
+  }
+};
 ```
+
+## 🎯 Преимущества
+
+✅ **Производительность** - Kotlin + Spring Boot обеспечивают высокую производительность  
+✅ **Типобезопасность** - строгая типизация Kotlin  
+✅ **Масштабируемость** - легко добавлять новые функции  
+✅ **Совместимость** - работает с существующей базой данных  
+✅ **Постепенная миграция** - можно переносить функционал по частям  
+
+## 🔮 Планы развития
+
+1. **Аутентификация** - JWT токены
+2. **Пользователи** - управление пользователями
+3. **Сеансы** - управление сеансами кино
+4. **Заказы** - система заказов
+5. **Аналитика** - статистика и отчеты
+
+## 📞 Поддержка
+
+При возникновении проблем проверьте:
+1. Логи приложения в консоли
+2. Подключение к базе данных
+3. CORS настройки
+4. Порты (8080 для Kotlin, 3001 для Node.js) 

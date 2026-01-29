@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["gradle_8", "jdk17"]
+
+[phases.install]
+cmds = [
+  "gradle wrapper --gradle-version 8.10.2"
+]
+
+[phases.build]
+cmds = [
+  "chmod +x ./gradlew",
+  "./gradlew build --no-daemon -x test"
+]
+
+[start]
+cmd = "sh -c 'java -jar $(ls build/libs/*.jar | grep -v plain | head -1)'"
