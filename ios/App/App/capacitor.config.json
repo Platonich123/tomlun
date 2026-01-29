@@ -1,0 +1,6 @@
+{
+	"appId": "com.tomlun.kino",
+	"appName": "Kino App",
+	"webDir": "dist",
+	"packageClassList": []
+}
